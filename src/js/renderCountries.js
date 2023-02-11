@@ -15,7 +15,7 @@ export default function renderCountries(dataCountries) {
       countryItem.push(`
           <li>
           <img src="${country.flags.svg}" alt='flag' width=40 class="country-flag"/>
-          <span class="country-name">${country.name.official}</span>
+          <span class="country-name">${country.name}</span>
           </li>
           `);
     });
@@ -31,11 +31,11 @@ export default function renderCountries(dataCountries) {
     <img src="${
       currentCountry.flags.svg
     }" alt='flag' width=40 class='country-flag'/>
-    <h2 class="country-name">${currentCountry.name.official}</h2>
+    <h2 class="country-name">${currentCountry.name}</h2>
     <div>
     <p>Capital: ${currentCountry.capital}</p>
     <p>Population:${currentCountry.population}</p>
-    <p>Languages: ${Object.values(currentCountry.languages).join(', ')}</p>
+    <p>Languages: ${currentCountry.languages.join(', ')}</p>
     </div>
     `;
     countryList.innerHTML = '';
