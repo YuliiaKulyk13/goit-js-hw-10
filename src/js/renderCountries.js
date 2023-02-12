@@ -21,7 +21,7 @@ export default function renderCountries(dataCountries) {
           `
       );
     });
-    countryList.innerHTML = countryItem;
+    countryList.innerHTML = countryItem.join('');
     countryInfo.innerHTML = '';
   } else {
     countryInfo.innerHTML = `
@@ -30,7 +30,7 @@ export default function renderCountries(dataCountries) {
     <div>
     <p>Capital: ${currentCountry.capital}</p>
     <p>Population:${currentCountry.population}</p>
-    <p>Languages: ${Object.values(currentCountry.languages).join(', ')}</p>
+    <p>Languages: ${currentCountry.languages.map(el => el.name)}</p>
     </div>
     `;
     countryList.innerHTML = '';
