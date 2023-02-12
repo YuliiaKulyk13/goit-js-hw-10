@@ -12,19 +12,21 @@ export default function renderCountries(dataCountries) {
     Notify.info('Too many matches found. Please enter a more specific name.');
   } else if (quantityCountries <= 10 && quantityCountries >= 2) {
     dataCountries.map(country => {
-      countryItem.push(`
+      countryItem.push(
+        `
           <li class='country-list'>
           <img src="${country.flags.svg}" class="country-flag"/>
-          <span class="country-name-item">${country.name.official}</span>
+          <span class="country-name-item">${country.name}</span>
           </li>
-          `);
+          `
+      );
     });
     countryList.innerHTML = countryItem;
     countryInfo.innerHTML = '';
   } else {
     countryInfo.innerHTML = `
     <img src="${currentCountry.flags.svg}" class='country-flag'/>
-    <h2 class="country-name">${currentCountry.name.official}</h2>
+    <h2 class="country-name">${currentCountry.name}</h2>
     <div>
     <p>Capital: ${currentCountry.capital}</p>
     <p>Population:${currentCountry.population}</p>
